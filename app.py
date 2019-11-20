@@ -13,7 +13,7 @@ def read_db():
 
 def write_db(message):
     with open('db.txt', 'a') as f:
-        f.write(message + '\n')
+        f.write(message.replace('<', '').replace('>', '').replace('(', '').replace(')', '') + '\n')
 
 def render(messages):
     with open('index.html', 'r') as f:
